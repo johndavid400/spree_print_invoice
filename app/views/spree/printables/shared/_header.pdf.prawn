@@ -1,7 +1,8 @@
-im = Rails.application.assets.find_asset(Spree::PrintInvoice::Config[:logo_path])
+rel_path = Rails.application.assets_manifest.assets[Spree::PrintInvoice::Config[:logo_path]]
+im = Rails.root.join("public","assets",rel_path)
 
-if im && File.exist?(im.pathname)
-  pdf.image im.filename, vposition: :top, height: 40, scale: Spree::PrintInvoice::Config[:logo_scale]
+if im && File.exist?(im)
+  pdf.image im, vposition: :top, height: 40, scale: Spree::PrintInvoice::Config[:logo_scale]
 end
 
 pdf.grid([0,3], [1,4]).bounding_box do
