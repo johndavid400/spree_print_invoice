@@ -3,7 +3,8 @@ module Spree
     preference :next_number,      :integer, default: nil
     preference :logo_path,        :string,  default: Spree::Config[:admin_interface_logo]
     preference :page_size,        :string,  default: 'LETTER'
-    preference :page_layout,      :string,  default: 'landscape'
+    #preference :page_layout,      :string,  default: 'landscape'
+    preference :page_layout,      :string,  default: 'portrait'
     preference :footer_left,      :string,  default: ''
     preference :footer_right,     :string,  default: ''
     preference :return_message,   :text,    default: ''
